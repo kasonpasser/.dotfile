@@ -133,7 +133,7 @@ set listchars=tab:\┊\ ,trail:░,eol:┐
 set tags+=./tags
 set foldmethod=indent foldmarker={,} foldlevel=99
 au BufRead,BufNewFile *.pl6 set ft=perl6 syntax=perl
-source ~/.commplice.vim
+source ~/.dotfile/commplice.vim
 
 " 打开文件时定义到上次的地方
 au BufReadPost *
