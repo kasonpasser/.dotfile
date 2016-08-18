@@ -1,0 +1,40 @@
+[user]
+	name = Kason
+	email = kasonpasser@gmail.com
+[credential]
+	helper = osxkeychain
+[i18n]
+	commitencoding = utf-8
+[core]
+	editor = vim
+	excludesfile = ~/.dotfile/gitignore_global
+[color]
+	ui = true
+[merge]
+	tool = vimdiff
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
+[push]
+	default = simple
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+[mergetool "sourcetree"]
+	cmd = /Users/wukaisheng/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	b = branch
+	pl = pull
+	ps = push
+	dt = difftool
+	l = log
+	last = log -l HEAD
+	d = difftool
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
