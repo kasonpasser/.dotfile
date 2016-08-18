@@ -7,7 +7,9 @@ if has('gui_running')
     set background=dark
     colorscheme solarized
 else
-    set background=light
+    set background=dark
+    "colorscheme solarized
+    colorscheme slate
     set t_Co=256 " make sure our terminal use 256 color
     let g:airline_powerline_fonts=1
 endif
@@ -29,7 +31,7 @@ if &term =~ 'xterm'
 endif
 
 set matchtime=0 " 0 second to show the matching paren ( much faster )
-" set nu " show line number
+set nu " show line number
 set scrolloff=0 " minimal number of screen lines to keep above and below the cursor
 set nowrap " do not wrap text
 set noacd " no autochchdir
@@ -107,7 +109,7 @@ vnoremap > >gv
 " http://vim.sourceforge.net/tip_view.php?tip_id=
 " Then when you put the cursor on or in a word, press "\sw", and
 " the word will be swapped with the next word.  The words may
-" even be separated by punctuation (such as "def = abc").
+" even be separated by punctuation (such as "abc = def").
 nnoremap <silent> <leader>sw "_yiw:s/\(\%#\w\+\)\(\W\+\)\(\w\+\)/\3\2\1/<cr><c-o>
 
 " This file will be loaded at the end of .vimrc.
@@ -120,8 +122,8 @@ set undofile               " 可以无限撤消
 set undodir=~/.data/undodir " 无限撤消时的目录
 set undolevels=999
 set textwidth=90
-set colorcolumn=90
-set cmdheight=2
+set colorcolumn=120
+"set cmdheight=2
 "set cursorcolumn
 set cursorline
 set tabstop=4
