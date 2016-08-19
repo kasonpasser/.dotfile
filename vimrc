@@ -70,7 +70,7 @@ NeoBundleLazy 'shawncplus/phpcomplete.vim',{'autoload':{'filetype':'php'}}
 NeoBundleLazy 'vimeo/vimeo.php',{'autoload':{'filetype':'php'}}
 NeoBundleLazy 'stephpy/vim-php-cs-fixer',{'autoload':{'filetype':'php'}}
 
-NeoBundle 'jaredly/vim-debug'
+"NeoBundle 'jaredly/vim-debug'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'xolox/vim-misc'
 NeoBundle 'benmills/vimux'
@@ -121,7 +121,6 @@ filetype plugin indent on
  " this will conveniently prompt you to install them.
 NeoBundleCheck
 " Airline {{{
-
 set noshowmode
 let g:airline_theme='luna'
 let g:airline#extensions#branch#enabled=1
@@ -150,15 +149,40 @@ nnoremap <silent><Leader>f :Unite -silent -no-split -start-insert -auto-preview
             \ line<CR>
 nnoremap <silent>[menu]8 :UniteWithCursorWord -silent -no-split -auto-preview
             \ line<CR>
+" yankring
+"nnoremap <silent><Leader>i :Unite -silent history/yank<CR>
+" help
+nnoremap <silent> g<C-h> :UniteWithCursorWord -silent help<CR>
+" tasks
+nnoremap <silent><Leader>; :Unite -silent -toggle
+            \ grep:%::FIXME\|TODO\|NOTE\|XXX\|COMBAK\|@todo<CR>
+" outlines (also ctags)
+nnoremap <silent><Leader>t :Unite -silent -vertical -winwidth=40
+            \ -direction=topleft -toggle outline<CR>
 
 " }}}
-"{
+"{{{
 call unite#filters#matcher_default#use(['matcher_fuzzy'])
 call unite#filters#sorter_default#use(['sorter_rank'])
 call unite#custom#source('file_mru,file_rec,file_rec/async,grep,locate',
             \ 'ignore_pattern', join(['\.git/', 'tmp/', 'bundle/'], '\|'))
 
-" }}}"}
+"let g:unite_source_history_yank_enable = 1
+let g:unite_enable_start_insert = 0
+let g:unite_enable_short_source_mes = 0
+let g:unite_force_overwrite_statusline = 0
+let g:unite_prompt = '>>> '
+let g:unite_marked_icon = '✓'
+let g:unite_candidate_icon = '∘'
+let g:unite_winheight = 15
+let g:unite_update_time = 200
+let g:unite_split_rule = 'botright'
+let g:unite_data_directory = '~/.vim/tmp/unite'
+let g:unite_source_buffer_time_format = '(%d-%m-%Y %H:%M:%S) '
+let g:unite_source_file_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
+let g:unite_source_directory_mru_time_format = '(%d-%m-%Y %H:%M:%S) '
+
+" }}}
 
 " {{{ Taglist
 let Tlist_File_Fold_Auto_Colse = 1
@@ -193,7 +217,7 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "}}}
-let s:after_vimrc = expand('~/.after.vimrc')
+let s:after_vimrc = expand('~/.dotfile/after.vimrc')
 if filereadable(s:after_vimrc)
     exec ':so ' . s:after_vimrc
 endif
