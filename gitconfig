@@ -18,11 +18,6 @@
 	required = true
 [push]
 	default = simple
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-	cmd = /Users/wukaisheng/Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [alias]
 	st = status
 	co = checkout
@@ -34,7 +29,10 @@
 	l = log
 	last = log -l HEAD
 	d = difftool
+	m = merge
 [diff]
 	tool = vimdiff
 [difftool]
 	prompt = false
+[mergetool]
+	propt = false

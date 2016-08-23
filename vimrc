@@ -69,6 +69,8 @@ NeoBundleLazy 'tpope/vim-rails',{'autoload':{'filetype':'ruby'}}
 NeoBundleLazy 'shawncplus/phpcomplete.vim',{'autoload':{'filetype':'php'}}
 NeoBundleLazy 'vimeo/vimeo.php',{'autoload':{'filetype':'php'}}
 NeoBundleLazy 'stephpy/vim-php-cs-fixer',{'autoload':{'filetype':'php'}}
+" css
+NeoBundleLazy 'hail2u/vim-css3-syntax',{'autoload':{'filetype':'css'}}
 
 "NeoBundle 'jaredly/vim-debug'
 NeoBundle 'mattn/emmet-vim'
@@ -98,6 +100,8 @@ NeoBundle 'scrooloose/nerdtree'
 " git
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'mhinz/vim-signify'
+NeoBundle 'airblade/vim-gitgutter'
+
 NeoBundle 'Valloric/YouCompleteMe',{
      \ 'build'      : {
         \ 'mac'     : './install.py',

@@ -140,4 +140,5 @@ au BufReadPost *
             \ if line("'\"") > 0 && line("'\"") <= line("$") |
             \   exe "normal g`\"" |
             \ endif
+au BufWinLeave * silent mkview au BufWinEnter * silent loadview
 " vim:ts=4:sw=4:sts=4 et fdm=marker:
